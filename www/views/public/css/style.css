@@ -1,0 +1,36 @@
+.fakeimg {
+    background-color: #aaaaaa; 
+    width: 500px; 
+    height: 500px;
+}
+
+.optionsMenu {
+    font-weight:bolder;
+    cursor: pointer;
+}
+
+.img {
+    max-width: 25rem; 
+    max-height: 25rem;
+}
+
+.optionDropdown:hover{
+    background-color: rgb(48, 50, 54);
+}
+
+body {
+    font-weight: lighter;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+#FLECK::after {
+    content: "_";
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% {opacity: 1;}
+    50% {opacity: 0;}
+  }
+  

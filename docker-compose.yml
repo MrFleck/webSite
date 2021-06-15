@@ -1,0 +1,93 @@
+version: '3'
+
+volumes: 
+    prometheus_data: {}
+    grafana_data: {}
+
+
+networks: 
+    main:
+        name: interna
+        driver: 'bridge'
+
+services:
+
+    node:
+        build: .
+        ports: 
+            - "8000:8000"
+        volumes: 
+            - ./www:/var/www/html
+        links: 
+            - db
+        command: npm start
+        networks: 
+            - main
+
+    db:
+        image: mysql:5.7
+        ports: 
+            - "3306:3306"
+        expose: 
+            - "3306"
+        restart: always
+        volumes: 
+            - ./base:/var/lib/mysql
+        environment: 
+            - MYSQL_ROOT_PASSWORD=Asdf1234
+            - MYSQL_DATABASE=db_site_admin
+        networks: 
+            - main
+
+
+    prometheus:
+        image: prom/prometheus:v2.1.0
+        ports: 
+            - "9090:9090"
+        networks: 
+            - main
+        restart: always
+        volumes:
+            - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+        command: 
+            - --config.file=/etc/prometheus/prometheus.yml
+
+    node-exporter:
+        image: prom/node-exporter
+        ports:
+            - "9100:9100"
+        networks: 
+            - main
+        restart: always
+        depends_on:
+            - prometheus
+    
+    grafana:
+        image: grafana/grafana
+        depends_on:
+            - prometheus
+        user: "104"
+        ports:
+            - "3000:3000"
+        networks: 
+            - main
+        restart: always
+        volumes:
+            - grafana_data:/var/lib/grafana
+    
+    mysql-exporter:
+        image: prom/mysqld-exporter
+        ports:
+            - "9104:9104"
+        networks: 
+            - main
+        volumes:
+            - ./mysql-exporter/.my.cnf:/root/.my.cnf
+        environment:
+            - DATA_SOURCE_NAME=root:Asdf1234@(db:3306)/
+        restart: always
+        depends_on:
+            - db
+            - prometheus
+    
+    

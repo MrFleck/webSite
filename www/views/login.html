@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./public/icon/favicon-32x32.png" />
+    <link rel="manifest" href=".public/icon/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="./public/css/fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="./public/css/fontawesome/css/brands.css" rel="stylesheet">
+    <link href="./public/css/fontawesome/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <title>Fleck | Login</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+</head>
+
+
+<body class="text-center">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12"
+        style="padding-right: 27rem; padding-left: 27rem; padding-top: 10rem;">
+        <form class="form-signin" action="/admin" method="POST">
+            <img class="mb-4" src="./public/icon/sobre.svg" style="max-height: 10rem; max-width: 10rem;">
+            <div class="alert alert-danger" role="alert" style="<%=erro%>">
+                <label>
+                    <%=erroMensagem%><label>
+            </div>
+            <h1 class="h3 mb-3 font-weight-normal">Bem vindo de volta.</h1>
+            <div style="padding-right: 8rem; padding-left: 8rem;">
+                <label for="inputEmail" style="float: left;">E-mail</label>
+                <input name="email" type="email" id="inputEmail" class="form-control" placeholder="exemplo@email.com"
+                    required>
+                <br />
+                <label for="inputPassword" style="float: left;">Senha</label>
+                <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Senha"
+                    required>
+                <br />
+                <br />
+                <button class="btn btn-lg btn-success btn-block" type="submit">Entrar</button>
+                <br /><br />
+                <a href="/cadastro">Clique aqui para se cadastrar</a>
+                <br />
+            </div>
+            <p class="mt-5 mb-3 text-muted">&copy; 2020-<span id="year"></span> FLECK.</p>
+        </form>
+    </div>
+</body>
+<script type="text/javascript" src="./public/js/script.js"></script>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fleck | Admin Home</title>
+    <link rel="shortcut icon" href="./public/icon/favicon-32x32.png" />
+    <link rel="manifest" href=".public/icon/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/sign-in/">
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./public/css/style.css" />
+</head>
+
+<body style=" background-color:#343a40; ">
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="background-color:rgb(34, 36, 39); height: 80px;">
+        <a class="navbar-brand" onclick="scrolla('carouselExampleIndicators')">
+            <%= message %>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Banners
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="background-color:rgb(34, 36, 39);">
+                        <a class="dropdown-item optionDropdown" style="color: #737476;" href="#">Banner espaço 1</a>
+                        <a class="dropdown-item optionDropdown" style="color: #737476;" href="#">Banner espaço 2</a>
+                        <a class="dropdown-item optionDropdown" style="color: #737476;" href="#">Banner espaço 3</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Textos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="background-color:rgb(34, 36, 39);">
+                        <a class="dropdown-item optionDropdown" style="color: #737476;" href="#">Texto sobre</a>
+                        <a class="dropdown-item optionDropdown" style="color: #737476;" href="#">Texto serviços</a>
+                        <a class="dropdown-item optionDropdown" style="color: #737476;" href="#">Texto clientes</a>
+                        <a class="dropdown-item optionDropdown" style="color: #737476;" href="#">Texto Tecnologias</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link optionsMenu" href="/metricas">Métricas</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="/admin">
+                <button class="btn btn-danger my-2 my-sm-0" type="submit" style="width: 80px;">Sair</button>
+            </form>
+        </div>
+    </nav>
+    <div>
+
+    </div>
+</body>
+
+</html>

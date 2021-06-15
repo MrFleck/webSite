@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./public/icon/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="manifest" href=".public/icon/site.webmanifest">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+    </style>
+
+    <title>Fleck | Cadastro</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+</head>
+
+<body class="text-center" style="padding-right: 25rem; padding-left: 25rem; padding-top: 8rem;">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <form class="form-signin" action="/cadastro" method="POST">
+            <img class="mb-4" src="./public/icon/sobre.svg" style="max-height: 10rem; max-width: 10rem;">
+            <div class="alert alert-danger" id="divErro" role="alert" style="<%=erro%>">
+                <%=erroMensagem%>
+            </div>
+            <h1 class="h3 mb-3 font-weight-normal">Olá, Seja bem vindo.</h1>
+            <div style="padding-right: 8rem; padding-left: 8rem;">
+                <div class="text-left">
+                    <label for="inputNome">Nome</label>
+                    <input name="nome" type="text" id="inputNome" class="form-control" placeholder="Fulano da Silva"
+                        required>
+                </div>
+                <div class="text-left" style="margin-top: 0.5rem;">
+                    <label for="inputEmail">E-mail</label>
+                    <input name="email" type="email" id="inputEmail" class="form-control"
+                        placeholder="exemplo@email.com" required>
+                </div>
+                <div class="text-left" style="margin-top: 0.5rem;">
+                    <label for="inputPassword">Senha</label>
+                    <input name="senha" type="password" id="inputPassword" class="form-control" placeholder="Senha"
+                        required>
+                </div>
+                <div class="text-left" style="margin-top: 0.5rem;">
+                    <label for="inputPassword">Confirmação da senha</label>
+                    <input name="senhaConfirmacao" type="password" id="inputPasswordConfirmation" class="form-control"
+                        placeholder="Confirmação de senha" onfocusout="VerificaSenhas();" required>
+                </div>
+                <br />
+                <br />
+                <button class="btn btn-lg btn-success btn-block" type="submit">Cadastrar</button>
+                <br />
+                <br />
+                <span>Já tem conta? <a href="/admin">Clique aqui</a> para fazer login</span>
+            </div>
+            <p class="mt-5 mb-3 text-muted">&copy; 2020-<span id="year"></span> FLECK.</p>
+        </form>
+    </div>
+</body>
+<script>
+    function ValidaCPF() {
+        var campoCpf = document.getElementById("inputCPF");
+        var cpf = document.getElementById("inputCPF").value;
+        var cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;
+        if (cpfValido.test(cpf) == false) {
+            campoCpf.style.color = "#ff0000";
+            campoCpf.style.borderColor = "#ff0000";
+        } else {
+            campoCpf.style.color = "";
+            campoCpf.style.borderColor = "";
+        }
+    }
+
+    function fMasc(objeto, mascara) {
+        obj = objeto
+        masc = mascara
+        setTimeout("fMascEx()", 1)
+    }
+
+    function fMascEx() {
+        obj.value = masc(obj.value)
+    }
+
+    function mCPF(cpf) {
+        cpf = cpf.replace(/\D/g, "")
+        cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2")
+        cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2")
+        cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2")
+        return cpf
+    }
+
+    //ESSA FUNCAO AINDA N ESTA TRABALHANDO DE FORMA CORRETA.
+    function VerificaSenhas() {
+        console.log('chamou nois bb');
+        var divErro = document.getElementById("divErro");
+        var senha = document.getElementById("inputPassword").value;
+        var senhaConfirma = document.getElementById("inputPasswordConfirmation").value;
+        var mensagem = document.createTextNode("Ops...as senhas não conferem");
+
+        if (senha != senhaConfirma) {
+            divErro.style.display = "";
+            divErro.textContent = "Ops...as senhas não conferem"
+        } else {
+            divErro.style.display = "none";
+            divErro.textContent = " ";
+        }
+    }
+</script>
+<script type="text/javascript" src="./public/js/script.js"></script>
+
+</html>

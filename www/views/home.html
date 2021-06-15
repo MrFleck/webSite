@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Fleck - Software House</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="./public/icon/favicon-32x32.png" />
+  <link rel="manifest" href=".public/icon/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="./public/css/fontawesome/css/fontawesome.css" rel="stylesheet">
+  <link href="./public/css/fontawesome/css/brands.css" rel="stylesheet">
+  <link href="./public/css/fontawesome/css/solid.css" rel="stylesheet">
+  <link rel="stylesheet" href="./public/css/style.css" />
+</head>
+
+<body>
+
+
+  <!-- MENU SUPERIOR -->
+
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: #363c42;">
+    <a class="navbar-brand optionsMenu" onclick="scrolla('carouselExampleIndicators')">Inicio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <span class="nav-link optionsMenu" onclick="scrolla('sobre')">Sobre</span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link optionsMenu" onclick="scrolla('servicos')">Serviços</a>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link optionsMenu" onclick="javascript:scrolla('clientes')">Clientes</a>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link optionsMenu" onclick="javascript:scrolla('tecnologias')">Tecnologias</a>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link optionsMenu" onclick="scrolla('contato')">Contato</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- BANNER -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="8500">
+    <!-- style="background-color: #aaaaaa; height: 832px;"> -->
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="height: 53.125rem; background-color: #343a40;">
+        <span type="typeText" id="FLECK"
+          style="color: #e0e0e0; font-size: 70px; margin-top: 20rem; margin-left: 50rem ;position: absolute;">
+
+        </span>
+        <span
+          style="color: #e0e0e0; font-size: 40px; margin-top: 28rem; margin-left: 55rem ;position: absolute; width: 37rem; text-align: justify;">
+          Soluções em software para você e sua empresa.
+        </span>
+        <img src="./public/icon/imgBanner1.svg" style="max-height: 18.75rem; margin-top: 27rem; margin-left: 12rem;">
+      </div>
+      <!-- <div class="carousel-item" style="height: 53.125rem; background-color: #343a40;"></div>>
+       <img src="./public/icon/Banner2.png" class="d-block w-100" height="850">
+      </div> -->
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <!-- CONTEUDO PÁGINA  -->
+
+
+  <div style="padding-top: 5rem; padding-left: 5rem; padding-right: 5rem;">
+
+    <div class="row" id="sobre" style="padding:3rem;">
+      <br />
+      <br />
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Um pouco <span class="text-muted"
+            style="font-weight:bolder; font-style: italic;">sobre</span> a
+          nossa história.
+        </h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
+          semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+          commodo.</p>
+      </div>
+      <div class="col-md-5">
+        <img class="mb-4 img" src="./public/icon/sobre.svg" style="margin-left: 12rem;">
+      </div>
+      <br />
+    </div>
+
+
+
+    <hr class="featurette-divider">
+
+
+
+    <div class="row" id="servicos" style="padding:3rem;">
+      <br />
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Prestamos mais que <span class="text-muted"
+            style="font-weight: bolder; font-style: italic;">serviços.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
+          semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+          commodo.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="mb-4 img" src="./public/icon/servicos.svg" style="margin-left: 5rem;">
+      </div>
+      <br />
+    </div>
+
+
+
+    <hr class="featurette-divider">
+
+
+
+    <div class="row" id="clientes" style="padding:3rem;">
+      <br />
+      <div class="col-md-7">
+        <h2 class="featurette-heading">O que nossos <span class="text-muted"
+            style="font-weight: bolder; font-style: italic;">clientes</span> dizem.</h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
+          semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+          commodo.</p>
+      </div>
+      <div class="col-md-5">
+        <img class="mb-4 img" src="./public/icon/clientes.svg" alt="" style="margin-left: 12rem;">
+      </div>
+      <br />
+    </div>
+
+
+
+
+    <hr class="featurette-divider">
+
+
+
+    <div class="row" id="tecnologias" style="padding:3rem;">
+      <br />
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Usamos as <span class="text-muted"
+            style="font-weight: bolder; font-style: italic;">tecnologias</span> mais recentes.</h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
+          semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+          commodo.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="mb-4 img" src="./public/icon/tecnologias.svg" style="margin-left: 5rem;">
+      </div>
+      <br />
+    </div>
+
+    <hr class="featurette-divider">
+
+
+
+    <div class="row" id="contato" style="padding-top:3rem;">
+      <br />
+      <br />
+      <div class="col-sm-12 col-md-12" style="padding-left: 8rem; padding-right: 8rem;">
+        <div class="text-center">
+          <h2 class="featurette-heading">Entre em <span class="text-muted"
+              style="font-weight: bolder; font-style: italic;">contato</span>.</h2>
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">E-mail</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Assunto</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Assunto">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Empresa</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nome da empresa">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Mensagem</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" cols="10" style="resize: none"
+              placeholder="Mensagem"></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" style="margin-top: 20px; margin-bottom: 10px;" class="btn btn-success">Enviar</button>
+          </div>
+        </form>
+      </div>
+      <br />
+    </div>
+    <hr class="featurette-divider">
+  </div>
+
+  <!-- RODAPÉ -->
+  <br />
+  <footer class="container">
+    <div class="col-md-12 col-sm-12" style="text-align: center;">
+      <a id="ig" href="https://www.instagram.com/mrfelipefleck/" target="_blank" rel="noopener noreferrer"
+        onmouseover="colorIcons(true,'ig','#E1306C')" onmouseout="colorIcons(false, 'ig', '#000')"
+        style="color: #000; font-size: 2rem; margin-right: 2rem;"><i class="fab fa-instagram"></i></a>
+      <a id="fb" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+        onmouseover="colorIcons(true, 'fb', '#4267B2')" onmouseout="colorIcons(false, 'fb', '#000')"
+        style="color: #000; font-size: 2rem; margin-right: 2rem;"><i class="fab fa-facebook-square"></i></a>
+      <a id="linkedin" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+        onmouseover="colorIcons(true, 'linkedin', '#2867b2')" onmouseout="colorIcons(false, 'linkedin', '#000')"
+        style="color: #000; font-size: 2rem; margin-right: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+      <a id="wpp" href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer"
+        onmouseover="colorIcons(true, 'wpp', '#25D366')" onmouseout="colorIcons(false, 'wpp', '#000')"
+        style="color: #000; font-size: 2rem;"><i class="fab fa-whatsapp"></i></a>
+      <p style="margin-top: 1.5rem; margin-right: 1rem;">&copy; 2020-<span id="year"></span> FLECK. &middot; <a
+          style="color: #000;" href="#">Privacidade</a> &middot; <a style="color: #000;" href="#">Termos</a> &middot; <a
+          style="color: #000;" href="#">Carreiras</a></p>
+    </div>
+    <br />
+  </footer>
+
+  <script type="text/javascript" src="./public/js/script.js"></script>
+</body>
+
+</html>
