@@ -18,6 +18,7 @@ services:
             - "8000:8000"
         volumes: 
             - ./www:/var/www/html
+            - /var/www/html/node_modules
         links: 
             - db
         command: npm start
