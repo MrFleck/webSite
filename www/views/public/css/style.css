@@ -34,3 +34,30 @@ body {
     50% {opacity: 0;}
   }
   
+
+
+
+  /* DEIXA RESPOSIVO */
+
+
+  /* IPHONE TO IPAD */
+@media screen and (min-width:320px) and (max-width:414px){
+    h1#FLECK{
+        font-size: 12px;
+    }
+    
+    img#iconBanner{
+        display: none;
+    }
+}
+
+@media screen and (min-width:415px) and (max-width:768px){
+    h1#FLECK{
+        font-size: 50px;
+    }
+
+    img#iconBanner{
+        display: none;
+    }
+}
+
