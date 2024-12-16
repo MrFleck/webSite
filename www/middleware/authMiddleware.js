@@ -1,4 +1,4 @@
-import tokenUtil from '../utils/token';
+const tokenUtil = require('../utils/token');
 
 const authMiddleware = (req, res, next) => {
   const url = req.originalUrl;
