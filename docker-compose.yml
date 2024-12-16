@@ -41,54 +41,54 @@ services:
             - main
 
 
-    prometheus:
-        image: prom/prometheus:v2.1.0
-        ports: 
-            - "9090:9090"
-        networks: 
-            - main
-        restart: always
-        volumes:
-            - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-        command: 
-            - --config.file=/etc/prometheus/prometheus.yml
+    # prometheus:
+    #     image: prom/prometheus:v2.1.0
+    #     ports: 
+    #         - "9090:9090"
+    #     networks: 
+    #         - main
+    #     restart: always
+    #     volumes:
+    #         - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    #     command: 
+    #         - --config.file=/etc/prometheus/prometheus.yml
 
-    node-exporter:
-        image: prom/node-exporter
-        ports:
-            - "9100:9100"
-        networks: 
-            - main
-        restart: always
-        depends_on:
-            - prometheus
+    # node-exporter:
+    #     image: prom/node-exporter
+    #     ports:
+    #         - "9100:9100"
+    #     networks: 
+    #         - main
+    #     restart: always
+    #     depends_on:
+    #         - prometheus
     
-    grafana:
-        image: grafana/grafana
-        depends_on:
-            - prometheus
-        user: "104"
-        ports:
-            - "3000:3000"
-        networks: 
-            - main
-        restart: always
-        volumes:
-            - grafana_data:/var/lib/grafana
+    # grafana:
+    #     image: grafana/grafana
+    #     depends_on:
+    #         - prometheus
+    #     user: "104"
+    #     ports:
+    #         - "3000:3000"
+    #     networks: 
+    #         - main
+    #     restart: always
+    #     volumes:
+    #         - grafana_data:/var/lib/grafana
     
-    mysql-exporter:
-        image: prom/mysqld-exporter
-        ports:
-            - "9104:9104"
-        networks: 
-            - main
-        volumes:
-            - ./mysql-exporter/.my.cnf:/root/.my.cnf
-        environment:
-            - DATA_SOURCE_NAME=root:Asdf1234@(db:3306)/
-        restart: always
-        depends_on:
-            - db
-            - prometheus
+    # mysql-exporter:
+    #     image: prom/mysqld-exporter
+    #     ports:
+    #         - "9104:9104"
+    #     networks: 
+    #         - main
+    #     volumes:
+    #         - ./mysql-exporter/.my.cnf:/root/.my.cnf
+    #     environment:
+    #         - DATA_SOURCE_NAME=root:Asdf1234@(db:3306)/
+    #     restart: always
+    #     depends_on:
+    #         - db
+    #         - prometheus
     
     

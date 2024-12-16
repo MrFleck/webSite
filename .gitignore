@@ -1,7 +1,10 @@
+.DS_Store
 env.js
 .env
 /www/node_modules/
 base/*
+
+*/.DS_Store
 
 
 !base/.gitkeep 
