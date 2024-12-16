@@ -1,4 +1,3 @@
-import express from 'express';
 import tokenUtil from '../utils/token';
 
 const authMiddleware = (req, res, next) => {
