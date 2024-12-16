@@ -24,6 +24,7 @@ app.use(express.json())
 app.set('views', path.resolve('./views'));
 app.set('views engine', 'ejs');
 
+
 //RENDERIZAR OS HTML
 app.engine('html', require('ejs').renderFile);
 
