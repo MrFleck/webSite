@@ -3,6 +3,10 @@ const express = require('express')
 const path = require('path')
 const app = express()
 
+
+//IMPORTANDO MIDDLEWARE
+const authMiddleware = require('./middleware/authMiddleware');
+
 //IMPORTANDO ROTAS
 const indexRouter = require('./routes/indexRouter');
 const loginRouter = require('./routes/loginRouter');
@@ -12,6 +16,7 @@ const homeRouter = require('./routes/homeRouter');
 //CONFIG  
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+app.use(authMiddleware);
 app.use('/public', express.static(__dirname + '/views/public/'));
 app.use(express.json()) 
   
